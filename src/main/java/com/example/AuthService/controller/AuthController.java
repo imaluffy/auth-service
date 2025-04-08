@@ -60,7 +60,11 @@ public class AuthController {
     }
 
     @GetMapping("/hey")
-    public String sayHello(){
-        return "Hello, Konichiwa guys";
+    public ResponseEntity<String> sayHello(){
+
+        //if token is validated, then response entity, else if the token is no validated, i am throeing error,
+        //now i want to tell to throw tis o tell
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body("Hey how's you");
+
     }
 }
